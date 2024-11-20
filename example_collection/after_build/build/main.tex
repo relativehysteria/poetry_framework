@@ -1,0 +1,58 @@
+\documentclass{book}
+\usepackage{fancyhdr}
+\usepackage{poemscol}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pgffor}
+
+\usepackage[a5paper,vmargin={2cm,8cm}]{geometry}
+
+\newcommand{\booktitle}{Mary Oliver: Selected Poems}
+
+\newcommand{\titlevol}[1]{
+    \begin{volumetitlepage}
+    \volumetitlefirstline{#1}
+    \volumeheader{#1}
+    \end{volumetitlepage}
+}
+
+\newcommand{\placechap}[3]{
+    \titlevol{#1}
+    \phantom{ } \vfill
+    \ifx\empty#3\else
+        \epigraph{#3}
+    \fi
+    \vfill
+    \resetpagestyle
+    \include{#2/_out.tex}
+}
+
+\verselinenumbersfalse
+\setcontentsleaders{\poemdotfill ~~~~~~~~~~~}
+
+\begin{document}
+
+\begin{maintitlepage}
+\leftheader{\booktitle}
+\wholebooktitle{\booktitle}
+\end{maintitlepage}
+
+\pagenumbering{gobble}
+
+\putpoemcontents
+\makepoemcontents
+
+\resetpagestyle
+\pagenumbering{arabic}
+
+
+\placechap{We Happy Few}{1}{}
+
+\placechap{I Swallowed a Toothpick}{2}{Darling, let me tell you something.\\ \\
+In your lifetime, you are going to clean a lot of houses.\\ \\
+And among all of those, a few of them will stick out as truly wonderful, beautiful experiences.\\ \\
+And none of them will be the ones that were easy.}
+
+
+\end{document}

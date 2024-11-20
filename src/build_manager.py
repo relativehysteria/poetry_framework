@@ -1,11 +1,19 @@
 # Manages build output structure and paths
+from os import system, chdir, getcwd
+from contextlib import contextmanager
 from pathlib import Path
 from metadata import load_metadata
 
 from create_toc import write_collection_readme
-from template import write_main_template
+from template import MAIN_FNAME, write_main_template
 from poetry import process_poetry_files
 
+@contextmanager
+def pushd(new_dir: Path):
+    previous = getcwd()
+    chdir(new_dir)
+    yield
+    chdir(previous)
 
 class BuildManager:
     BUILD_PATH = "build"
@@ -27,3 +35,10 @@ class BuildManager:
         write_collection_readme(self)
         write_main_template(self)
         process_poetry_files(self)
+
+    def compile(self):
+        """Compiles everything!"""
+        with pushd(self.build_path):
+            system(f"pdflatex {MAIN_FNAME}")
+        pdf = (self.build_path / MAIN_FNAME).with_suffix(".pdf")
+        pdf.replace(pdf.parents[1] / pdf.name)

@@ -1,0 +1,22 @@
+--- !Collection
+# Selected poems by Mary Oliver.
+# All taken from Poetry Foundation (without permission :P)
+title: "Mary Oliver: Selected Poems"
+latex: !LatexConfig
+  geometry: "a5paper,vmargin={2cm,8cm}"
+chapters:
+  - !Chapter
+    title: "We Happy Few"
+
+  - !Chapter
+    title: "I Swallowed a Toothpick"
+
+    # The following epigraph is from Davey Wreden's "The Beginner's Guide"
+    epigraph: |
+      Darling, let me tell you something.
+
+      In your lifetime, you are going to clean a lot of houses.
+
+      And among all of those, a few of them will stick out as truly wonderful, beautiful experiences.
+
+      And none of them will be the ones that were easy.

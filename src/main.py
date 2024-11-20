@@ -11,3 +11,4 @@ if len(argv) != 2:
 collection_path = Path(argv[1])
 build_manager = BuildManager(collection_path)
 build_manager.build()
+build_manager.compile()

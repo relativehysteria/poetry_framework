@@ -1,0 +1,494 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023 Gentoo Linux) (preloaded format=pdflatex 2024.8.7)  20 NOV 2024 10:37
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@chapter=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip50
+\f@nch@O@elh=\skip51
+\f@nch@O@erh=\skip52
+\f@nch@O@olh=\skip53
+\f@nch@O@orh=\skip54
+\f@nch@O@elf=\skip55
+\f@nch@O@erf=\skip56
+\f@nch@O@olf=\skip57
+\f@nch@O@orf=\skip58
+)
+(/usr/share/texmf-dist/tex/latex/poemscol/poemscol.sty
+Package: poemscol 2020/06/12 v3.1415926 poemscol file
+\verseindentamount=\skip59
+\l@@pcounter=\count196
+\indentedstanzaamount=\skip60
+\variablestanzaamount=\skip61
+\titleindentamount=\skip62
+\titleindenttwoamount=\skip63
+\titleindentthreeamount=\skip64
+\volumetitleindentamount=\skip65
+\volumetitlesecondlineindentamount=\skip66
+\volumesubtitleindentamount=\skip67
+\volumesubtitlesecondlineindentamount=\skip68
+\volumesectiontitleindentamount=\skip69
+\volumesectiontitlesecondlineindentamount=\skip70
+\poemtitleindentamount=\skip71
+\poemtitlesecondlineindentamount=\skip72
+\poemsubtitleindentamount=\skip73
+\poemsectiontitleindentamount=\skip74
+\poemsectiontitlesecondlineindentamount=\skip75
+\poemsubsectiontitleindentamount=\skip76
+\sequencetitleindentamount=\skip77
+\sequencetitlesecondlineindentamount=\skip78
+\sequencesubtitleindentamount=\skip79
+\sequencesubtitlesecondlineindentamount=\skip80
+\sequencesectiontitleindentamount=\skip81
+\sequencesectiontitlesecondlineindentamount=\skip82
+\sequencesectionsubtitleindentamount=\skip83
+\sequencesectionsubtitlesecondlineindentamount=\skip84
+\sequencesubsectiontitleindentamount=\skip85
+\sequencesubsubsectiontitleindentamount=\skip86
+\appendixtitleindentamount=\skip87
+\subappendixtitleindentamount=\skip88
+\forewordtitleindentamount=\skip89
+\notestitleindentamount=\skip90
+\volumetitleshiftamount=\dimen141
+\voladditionalamount=\dimen142
+\contentsindentoneamount=\dimen143
+\contentsindenttwoamount=\dimen144
+\contentsindentthreeamount=\dimen145
+\contentsindentfouramount=\dimen146
+\contentsindentfiveamount=\dimen147
+\contentsvolumetitleindentamount=\skip91
+\contentsvolumetitlesecondlineindentamount=\skip92
+\contentsvolumesubtitleindentamount=\skip93
+\contentsvolumesubtitlesecondlineindentamount=\skip94
+\contentsvolumesectiontitleindentamount=\skip95
+\contentsvolumesectiontitlesecondlineindentamount=\skip96
+\contentspoemtitleindentamount=\skip97
+\contentspoemtitlesecondlineindentamount=\skip98
+\contentspoemsubtitleindentamount=\skip99
+\contentspoemsectiontitleindentamount=\skip100
+\contentspoemsectiontitlesecondlineindentamount=\skip101
+\contentspoemsubsectiontitleindentamount=\skip102
+\contentssequencetitleindentamount=\skip103
+\contentssequencetitlesecondlineindentamount=\skip104
+\contentssequencesubtitleindentamount=\skip105
+\contentssequencesubtitlesecondlineindentamount=\skip106
+\contentssequencesectiontitleindentamount=\skip107
+\contentssequencesectiontitlesecondlineindentamount=\skip108
+\contentssequencesectionsubtitleindentamount=\skip109
+\contentssequencesectionsubtitlesecondlineindentamount=\skip110
+\contentssequencesubsectiontitleindentamount=\skip111
+\contentssequencesubsubsectiontitleindentamount=\skip112
+\poemtitlewidth=\skip113
+\lefttitleaddition=\skip114
+\marginparsepmin=\skip115
+\versemarginadjust=\skip116
+\c@verselinenumber=\count197
+\c@printlineindex=\count198
+\c@verselinenumberscratch=\count199
+\c@printlineindexscratch=\count266
+\c@lineindexrepeat=\count267
+\c@lemmalines=\count268
+\c@lemmaend=\count269
+\c@poemnumber=\count270
+\c@notepageholdertitle=\count271
+\c@notepageholdernote=\count272
+\fulltitleholder=\toks17
+\titlesofar=\toks18
+\titleincrement=\toks19
+\@indexfile=\write3
+\openout3 = `main.idx'.
+
+
+Writing index file main.idx
+\headoffsetlength=\skip117
+\singlelineabbrev=\toks20
+\multiplelineabbrev=\toks21
+\singlepageabbrev=\toks22
+\multiplepageabbrev=\toks23
+\contentsentryoverrun=\skip118
+\titleentryoverrun=\skip119
+\versewidth=\skip120
+\@memcnta=\count273
+\c@cp@cntr=\count274
+\pmclsideparvshift=\skip121
+\pmclcontentsname=\toks24
+\pmclcontentsheader=\toks25
+\noteindentation=\skip122
+\pmclnotesname=\toks26
+\notesheadername=\toks27
+\textnotescontentsname=\toks28
+\emendationsname=\toks29
+\emendationsheadername=\toks30
+\emendationscontentsname=\toks31
+\explanationsname=\toks32
+\explanationsheadername=\toks33
+\explanationscontentsname=\toks34
+\lefttitlemargin=\skip123
+\JHtextwidth=\skip124
+\JHmarginparsep=\skip125
+\JHmarginparvshift=\skip126
+\JHmarginparwidth=\skip127
+\JHmarginparsepmin=\skip128
+\JHtitlemarginparsep=\skip129
+\c@margrefnumber=\count275
+\margrefmarker=\toks35
+\titlemargrefmarker=\toks36
+\centerepigraphindentation=\skip130
+\normalepigraphindentation=\skip131
+\dateindent=\skip132
+\poemattributionindent=\skip133
+\c@proselinenumber=\count276
+\c@prosemodulo=\count277
+\pmnoteheader=\toks37
+\c@pmsentencenumber=\count278
+\c@pmmodulo=\count279
+\c@pmindexcount=\count280
+\c@pmparagraph=\count281
+\pmrangeend=\toks38
+\pmclsavsk=\dimen148
+\pmclsavsf=\count282
+\c@rectolinecounter=\count283
+\c@rectoindexscratch=\count284
+\c@versolinecounter=\count285
+\c@versoindexscratch=\count286
+\versotitleholder=\toks39
+\rectotitleholder=\toks40
+\synchroflag=\toks41
+\versotextnotesname=\toks42
+\versotextnotesheadername=\toks43
+\versotextnotescontentsname=\toks44
+\rectotextnotesname=\toks45
+\rectotextnotesheadername=\toks46
+\rectotextnotescontentsname=\toks47
+\versoemendationsname=\toks48
+\versoemendationsheadername=\toks49
+\versoemendationscontentsname=\toks50
+\rectoemendationsname=\toks51
+\rectoemendationsheadername=\toks52
+\rectoemendationscontentsname=\toks53
+\versoexplanationsname=\toks54
+\versoexplanationsheadername=\toks55
+\versoexplanationscontentsname=\toks56
+\rectoexplanationsname=\toks57
+\rectoexplanationsheadername=\toks58
+\rectoexplanationscontentsname=\toks59
+\c@prosepage=\count287
+\c@versoproselinecounter=\count288
+\c@rectoproselinecounter=\count289
+\poemindexname=\toks60
+\poemindexheadername=\toks61
+\poemindexcontentsname=\toks62
+\poemindexlabelname=\toks63
+\epigraphquoteleftmargin=\skip134
+\epigraphquoterightmargin=\skip135
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks64
+\inpenc@posthook=\toks65
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks66
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+(/usr/share/texmf-site/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-site/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf-site/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks67
+\pgfutil@tempdima=\dimen151
+\pgfutil@tempdimb=\dimen152
+)
+(/usr/share/texmf-site/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box51
+)
+(/usr/share/texmf-site/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texmf-site/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2024/02/09 v3.1.10 (3.1.10)
+))
+(/usr/share/texmf-site/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf-site/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks68
+\pgfkeys@temptoks=\toks69
+
+(/usr/share/texmf-site/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.te
+x
+\pgfkeys@tmptoks=\toks70
+))) (/usr/share/texmf-site/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen153
+\pgf@xa=\dimen154
+\pgf@xb=\dimen155
+\pgf@xc=\dimen156
+\pgf@y=\dimen157
+\pgf@ya=\dimen158
+\pgf@yb=\dimen159
+\pgf@yc=\dimen160
+\c@pgf@counta=\count290
+\c@pgf@countb=\count291
+\c@pgf@countc=\count292
+\c@pgf@countd=\count293
+)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen161
+\pgfmath@count=\count294
+\pgfmath@box=\box52
+\pgfmath@toks=\toks71
+\pgfmath@stack@operand=\toks72
+\pgfmath@stack@operation=\toks73
+)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
+.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
+x) (/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
+.code.tex) (/usr/share/texmf-site/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texmf-site/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count295
+)))
+(/usr/share/texmf-site/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2024/02/09 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen162
+\pgffor@skip=\dimen163
+\pgffor@stack=\toks74
+\pgffor@toks=\toks75
+))
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
+\Gm@bindingoffset=\dimen164
+\Gm@wd@mp=\dimen165
+\Gm@odd@mp=\dimen166
+\Gm@even@mp=\dimen167
+\Gm@layoutwidth=\dimen168
+\Gm@layoutheight=\dimen169
+\Gm@layouthoffset=\dimen170
+\Gm@layoutvoffset=\dimen171
+\Gm@dimlist=\toks76
+)
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count299
+\l__pdf_internal_box=\box53
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count300
+\scratchdimen=\dimen172
+\scratchbox=\box54
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks77
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen173
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks78
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a5paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside asymmetric 
+* h-part:(L,W,R)=(50.5326pt, 294.76926pt, 75.79893pt)
+* v-part:(T,H,B)=(56.9055pt, 312.98033pt, 227.62204pt)
+* \paperwidth=421.10078pt
+* \paperheight=597.50787pt
+* \textwidth=294.76926pt
+* \textheight=312.98033pt
+* \oddsidemargin=-21.7374pt
+* \evensidemargin=-21.7374pt
+* \topmargin=-45.43198pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=18.0pt
+* \marginparsep=18.0pt
+* \columnsep=15.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
+/enc/dvips/cm-super/cm-super-t1.enc}] [2
+
+]
+Run again to input contents file here
+\poemcontents=\write4
+\openout4 = `main.ctn'.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <18> not available
+(Font)              size <17.28> substituted on input line 50.
+
+[1
+
+
+] [2
+
+] [3]
+\openout2 = `1/_out.aux'.
+
+ (./1/_out.tex [4
+
+] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+[15] [16] [17] [18] [19]) [20
+
+
+
+
+] [21] [22
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+
+ []
+
+[23]
+\openout2 = `2/_out.aux'.
+
+ (./2/_out.tex [24
+
+] [25]) (./main.aux (./1/_out.aux) (./2/_out.aux))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.72pt have occurred.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 8945 strings out of 476148
+ 171694 string characters out of 5795056
+ 1930975 words of memory out of 5000000
+ 30874 multiletter control sequences out of 15000+600000
+ 563950 words of font info for 44 fonts, out of 8000000 for 9000
+ 24 hyphenation exceptions out of 8191
+ 57i,13n,65p,358b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/t
+exmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts
+/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/c
+m-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm172
+8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/f
+onts/type1/public/cm-super/sfti1000.pfb>
+Output written on main.pdf (27 pages, 151453 bytes).
+PDF statistics:
+ 132 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
