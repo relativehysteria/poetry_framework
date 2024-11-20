@@ -2,6 +2,7 @@
 from pathlib import Path
 from metadata import Collection
 from typing import List
+import re
 
 
 def needs_regeneration(input_file: Path, output_file: Path) -> bool:
@@ -11,7 +12,7 @@ def needs_regeneration(input_file: Path, output_file: Path) -> bool:
     return input_file.stat().st_mtime > output_file.stat().st_mtime
 
 
-def regenerate_poem(input_file: Path, output_file: Path):
+def regenerate_poem(input_file: Path) -> str:
     """Regenerate a LaTeX file for a poem."""
     splits = input_file.read_text().rstrip().split("\n\n")
     title = splits[0] if splits[0] else "(Untitled)"
@@ -34,8 +35,11 @@ def regenerate_poem(input_file: Path, output_file: Path):
         poem += "\n\\end{stanza}\n"
     poem += "\\end{poem}"
 
-    # Placeholder for actual processing
-    output_file.write_text(poem)
+    # Don't strip whitespace
+    poem = re.sub(r'  +', lambda match: '~' * len(match.group()), poem)
+    poem = re.sub(r'^ ', '~', poem, flags=re.MULTILINE)
+
+    return poem
 
 
 def correct_quotes(stanzas: List[List[str]]) -> List[List[str]]:
@@ -87,10 +91,7 @@ def textsc_first(verse: str) -> str:
     if idx_word is None:
         return ""
 
-    ret  = ' ' * idx_word[0]
-    ret += "\\textsc{"
-    ret += idx_word[1].strip()
-    ret += '}'
+    ret  = ' ' * idx_word[0] + f"\\textsc{{{idx_word[1].strip()}}}"
     if idx_word[1][-1] == '\n':
         ret += '\n'
     else:
@@ -106,7 +107,23 @@ def process_poetry_files(build_manager):
         chapter_input_path = build_manager.collection_path / str(idx)
         chapter_output_path = build_manager.get_chapter_output_path(idx)
 
+        # All .tex files are appended to this file at the end such that it can
+        # be included in the main LaTeX file
+        chapter_out_file = chapter_output_path / "_out.tex"
+        with chapter_out_file.open('w') as _:
+            pass
+
+        # Regenerate all files that need regeneration and put all generated .tex
+        # files into a single includable out_file
         for inp_file in sorted(chapter_input_path.iterdir()):
             out_file = chapter_output_path / inp_file.with_suffix(".tex").name
+            output = None
             if needs_regeneration(inp_file, out_file):
-                regenerate_poem(inp_file, out_file)
+                output = regenerate_poem(inp_file)
+                out_file.write_text(output)
+
+            # Append the output to the chapter out_file
+            output  = output if output else out_file.read_text()
+            output += "\n\n\\newpage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n"
+            with chapter_out_file.open('a') as f:
+                f.write(output)

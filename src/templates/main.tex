@@ -25,10 +25,7 @@
     \fi
     \vfill
     \resetpagestyle
-    \foreach \filename in {{#2/*.tex}}{{
-        \input{{\filename}}
-        \newpage
-    }}
+    \include{{#2/_out.tex}}
 }}
 
 \verselinenumbersfalse
