@@ -1,6 +1,7 @@
-a framework for the automation of poetry typesetting.
+poetry typesetting automation
 
-TODO:
-* validate meta yaml having a single collection config
-* make empty collections possible (as long as defined in the yaml)
-* pock pock textit in fall
+go look into the [`before_build`](example_collection/before_build) directory
+and you'll get the gist of it ;)
+
+then simply call the [`main.py`](src/main.py) file in the directory and watch it
+go.
