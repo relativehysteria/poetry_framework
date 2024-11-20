@@ -19,5 +19,5 @@ Started 2024-11-20. Finished 2024-11-20.
 
 ### I Swallowed a Toothpick
 
-01. [In Malaysia](2/01.txt)
+1. [In Malaysia](2/1.txt)
 

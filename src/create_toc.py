@@ -26,7 +26,9 @@ def write_collection_readme(build_manager):
         file.write("## Table of Contents\n\n")
 
         for idx, chapter in enumerate(metadata.chapters, start=1):
+            pad = len(str(len(chapter.poems)))
             file.write(f"### {chapter.title}\n\n")
             for poem_idx, poem in enumerate(chapter.poems, start=1):
-                file.write(f"{poem_idx:02d}. [{poem.title}]({idx}/{poem_idx:02d}.txt)\n")
+                poem_idx = f"{poem_idx:0{pad}d}"
+                file.write(f"{poem_idx}. [{poem.title}]({idx}/{poem_idx}.txt)\n")
             file.write("\n")
