@@ -1,37 +1,21 @@
-#!/usr/bin/env python
-
+# Handles YAML metadata parsing and processing
 from pathlib import Path
-from os.path import getmtime
-from dataclasses import dataclass, field
 from typing import List, Optional
+from dataclasses import dataclass, field
 import yaml
 
-# Root path to all poetry collections
-COLLECTION_ROOT: Path = Path("collections")
-
-# Path to the build directory of each collection.
-# Basically `COLLECTION_ROOT / <collection> / BUILD_PATH`
-BUILD_PATH: Path = Path("build")
-
 # Name of the file that stores collection metadata
-METADATA_FNAME: str = "collection_metadata.yaml"
-
+METADATA_FNAME = "collection_metadata.yaml"
 
 @dataclass
 class Stanza:
-    # Verses content for this stanza
     verses: List[str]
 
 
 @dataclass
 class Poem:
-    # Title of the poem
     title: str
-
-    # Last edit time of the poem
     edit: float
-
-    # Stanzas content for this poem
     stanzas: Optional[List[Stanza]] = field(default=None)
 
 
@@ -41,31 +25,49 @@ class Serializer(type(yaml.YAMLObject)):
         dct['yaml_loader'] = yaml.SafeLoader
         return super().__new__(cls, name, bases, dct)
 
+
 @dataclass
 class LatexConfig(yaml.YAMLObject, metaclass=Serializer):
-    # LaTeX geometry configuration (e.g., paper size and margins)
     geometry: str
 
 
 @dataclass
 class Chapter(yaml.YAMLObject, metaclass=Serializer):
-    # Chapter title
     title: str
-
-    # Chapter epigraph
     epigraph: Optional[str] = field(default=None)
-
-    # List of poems in this chapter
     poems: Optional[List[Poem]] = field(default=None)
+
+    # Extract metadata for poems in a given chapter
+    def load_poetry_metadata(self, chapter_path: Path):
+        # If it's cached already, presume it's done.
+        if self.poems is not None:
+            return
+        self.poems = []
+
+        # Read the title of a poem from the file's initial non-blank lines
+        def read_title(path: Path) -> str:
+            title_lines = []
+            with path.open('r') as f:
+                for line in f:
+                    if line.strip() == "":
+                        break
+                    title_lines.append(line.strip())
+            return " ".join(title_lines)
+
+        for file in sorted(chapter_path.iterdir()):
+            edit = file.stat().st_mtime
+            title = read_title(file)
+            self.poems.append(Poem(title=title, edit=edit, stanzas=None))
 
 
 @dataclass
 class Collection(yaml.YAMLObject, metaclass=Serializer):
-    # Collection title
     title: str
-
-    # LaTeX configuration for the collection
     latex: LatexConfig
-
-    # List of chapters in the collection
     chapters: List[Chapter]
+
+
+def load_metadata(collection_path: Path) -> Collection:
+    """Load metadata from the YAML file and return a Collection object."""
+    metadata_path = collection_path / METADATA_FNAME
+    return yaml.safe_load(metadata_path.read_text())
