@@ -8,7 +8,7 @@ MAIN_TEMPLATE = (TEMPLATES_ROOT / MAIN_FNAME).read_text()
 
 
 def generate_main(metadata: Collection) -> str:
-    chapter_template = r"\placechap{{{title}}}{{{epigraph}}}{{{index}}}"
+    chapter_template = r"\placechap{{{title}}}{{{index}}}{{{epigraph}}}"
     chapters_code = ""
 
     # Generate \placechap chapter code

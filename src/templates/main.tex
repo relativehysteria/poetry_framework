@@ -20,12 +20,12 @@
 \newcommand{{\placechap}}[3]{{
     \titlevol{{#1}}
     \phantom{{ }} \vfill
-    \ifx\empty#2\else
-        \epigraph{{#2}}
+    \ifx\empty#3\else
+        \epigraph{{#3}}
     \fi
     \vfill
     \resetpagestyle
-    \foreach \filename in {{#3/*.tex}}{{
+    \foreach \filename in {{#2/*.tex}}{{
         \input{{\filename}}
         \newpage
     }}
