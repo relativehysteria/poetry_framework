@@ -7,16 +7,11 @@ import yaml
 # Name of the file that stores collection metadata
 METADATA_FNAME = "collection_metadata.yaml"
 
-@dataclass
-class Stanza:
-    verses: List[str]
-
 
 @dataclass
 class Poem:
     title: str
     edit: float
-    stanzas: Optional[List[Stanza]] = field(default=None)
 
 
 class Serializer(type(yaml.YAMLObject)):
@@ -57,7 +52,7 @@ class Chapter(yaml.YAMLObject, metaclass=Serializer):
         for file in sorted(chapter_path.iterdir()):
             edit = file.stat().st_mtime
             title = read_title(file)
-            self.poems.append(Poem(title=title, edit=edit, stanzas=None))
+            self.poems.append(Poem(title=title, edit=edit))
 
 
 @dataclass
