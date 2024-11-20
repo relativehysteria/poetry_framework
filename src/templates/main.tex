@@ -1,0 +1,50 @@
+\documentclass{{book}}
+\usepackage{{fancyhdr}}
+\usepackage{{poemscol}}
+\usepackage[T1]{{fontenc}}
+\usepackage[utf8]{{inputenc}}
+\usepackage{{graphicx}}
+
+\usepackage[{geometry}]{{geometry}}
+
+\newcommand{{\booktitle}}{{{title}}}
+
+\newcommand{{\titlevol}}[1]{{
+    \begin{{volumetitlepage}}
+    \volumetitlefirstline{{#1}}
+    \volumeheader{{#1}}
+    \end{{volumetitlepage}}
+}}
+
+\newcommand{{\placechap}}[3]{{
+    \titlevol{{#1}}
+    \phantom{{ }} \vfill
+    \ifx\empty#2\else
+        \epigraph{{#2}}
+    \fi
+    \vfill
+    \resetpagestyle
+    \include{{include/#3.tex}}
+}}
+
+\verselinenumbersfalse
+\setcontentsleaders{{\poemdotfill ~~~~~~~~~~~}}
+
+\begin{{document}}
+
+\begin{{maintitlepage}}
+\leftheader{{\booktitle}}
+\wholebooktitle{{\booktitle}}
+\end{{maintitlepage}}
+
+\pagenumbering{{gobble}}
+
+\putpoemcontents
+\makepoemcontents
+
+\resetpagestyle
+\pagenumbering{{arabic}}
+
+{chapters}
+
+\end{{document}}
