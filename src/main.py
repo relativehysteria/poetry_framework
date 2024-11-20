@@ -2,10 +2,6 @@
 
 from sys import argv
 from pathlib import Path
-from metadata import load_metadata
-from create_toc import write_collection_readme
-from template import write_main_template
-from poetry import process_poetry_files
 from build_manager import BuildManager
 
 if len(argv) != 2:
