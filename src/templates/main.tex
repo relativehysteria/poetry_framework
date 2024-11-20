@@ -4,6 +4,7 @@
 \usepackage[T1]{{fontenc}}
 \usepackage[utf8]{{inputenc}}
 \usepackage{{graphicx}}
+\usepackage{{pgffor}}
 
 \usepackage[{geometry}]{{geometry}}
 
@@ -24,7 +25,10 @@
     \fi
     \vfill
     \resetpagestyle
-    \include{{include/#3.tex}}
+    \foreach \filename in {{#3/*.tex}}{{
+        \input{{\filename}}
+        \newpage
+    }}
 }}
 
 \verselinenumbersfalse
