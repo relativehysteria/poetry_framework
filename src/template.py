@@ -31,7 +31,7 @@ def generate_main(metadata: Collection) -> str:
 
     # Combine everything into the final LaTeX file content and return it
     return MAIN_TEMPLATE.format(
-        geometry=metadata.latex.geometry,
+        packages=metadata.latex.generate_imports(),
         title=metadata.title,
         chapters=chapters_code
     )

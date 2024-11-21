@@ -21,9 +21,44 @@ class Serializer(type(yaml.YAMLObject)):
         return super().__new__(cls, name, bases, dct)
 
 
+type LatexPackage = dict[str, Optional[str]]
+
 @dataclass
 class LatexConfig(yaml.YAMLObject, metaclass=Serializer):
-    geometry: str
+    imports: Optional[LatexPackage] = field(default_factory=dict)
+
+    def validate(self):
+        """Validates the imported packages"""
+        # Validate package names are strings
+        if not all(isinstance(pkg, str) for pkg in self.imports):
+            raise ValueError("All package names must be strings.")
+        if not all(isinstance(opt, (str, type(None))) for opt in
+                   self.imports.values()):
+            raise ValueError("Package options must be strings or None.")
+
+    def import_required(self):
+        """Imports required packages if they weren't specified"""
+        # Make sure important packages are always defined
+        important = {
+            "fancyhdr": None,
+            "geometry": "a4paper",
+            "poemscol": None,
+            "fontenc": "T1",
+            "inputenc": "utf8",
+        }
+        for pkg, opt in important.items():
+            self.imports.setdefault(pkg, opt)
+
+
+    def generate_imports(self) -> str:
+        """Generate LaTeX import statements."""
+        lines = []
+        for package, options in self.imports.items():
+            if options:
+                lines.append(f"\\usepackage[{options}]{{{package}}}")
+            else:
+                lines.append(f"\\usepackage{{{package}}}")
+        return "\n".join(lines)
 
 
 @dataclass
@@ -58,11 +93,21 @@ class Chapter(yaml.YAMLObject, metaclass=Serializer):
 @dataclass
 class Collection(yaml.YAMLObject, metaclass=Serializer):
     title: str
-    latex: LatexConfig
     chapters: List[Chapter]
+    latex: Optional[LatexConfig] = field(default=None)
 
 
 def load_metadata(collection_path: Path) -> Collection:
     """Load metadata from the YAML file and return a Collection object."""
     metadata_path = collection_path / METADATA_FNAME
-    return yaml.safe_load(metadata_path.read_text())
+    collection = yaml.safe_load(metadata_path.read_text())
+
+    # I literally don't know how to do this otherwise. I just don't know how
+    # `default_factory` works because when i use it, it just doesn't get
+    # called when latex isn't specified. :(
+    if collection.latex is None:
+        collection.latex = LatexConfig()
+    collection.latex.validate()
+    collection.latex.import_required()
+
+    return collection
