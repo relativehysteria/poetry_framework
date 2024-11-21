@@ -65,13 +65,16 @@ class LatexConfig(yaml.YAMLObject, metaclass=Serializer):
 class Chapter(yaml.YAMLObject, metaclass=Serializer):
     title: str
     epigraph: Optional[str] = field(default=None)
-    poems: Optional[List[Poem]] = field(default=None)
 
     # Extract metadata for poems in a given chapter
     def load_poetry_metadata(self, chapter_path: Path):
         # If it's cached already, presume it's done.
-        if self.poems is not None:
+        if "poems" in dir(self):
             return
+
+        # Inject the poems attribute. This is not specified during
+        # initialization so people can't define it in the yaml. This was a bug,
+        # oops :D
         self.poems = []
 
         # Read the title of a poem from the file's initial non-blank lines
