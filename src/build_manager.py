@@ -40,5 +40,6 @@ class BuildManager:
         """Compiles everything!"""
         with pushd(self.build_path):
             system(f"pdflatex {MAIN_FNAME}")
+            system(f"pdflatex {MAIN_FNAME}")
         pdf = (self.build_path / MAIN_FNAME).with_suffix(".pdf")
         pdf.replace(pdf.parents[1] / pdf.name)

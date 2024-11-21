@@ -6,7 +6,8 @@ from build_manager import BuildManager
 
 if len(argv) != 2:
     print(f"Usage: {argv[0]} <collection_path>")
-    exit(1)
+    print(f"Attempting current directory...")
+    argv.append("./")
 
 collection_path = Path(argv[1])
 build_manager = BuildManager(collection_path)
