@@ -5,8 +5,10 @@ from pathlib import Path
 from metadata import load_metadata
 
 from create_toc import write_collection_readme
-from template import MAIN_FNAME, write_main_template
+from template import format_main_template
 from poetry import process_poetry_files
+
+OUTPUT_FILENAME = "main.tex"
 
 @contextmanager
 def pushd(new_dir: Path):
@@ -16,12 +18,11 @@ def pushd(new_dir: Path):
     chdir(previous)
 
 class BuildManager:
-    BUILD_PATH = "build"
-
-    def __init__(self, collection_path: Path):
+    def __init__(self, collection_path: Path, build_path: Path, template: str):
+        self.template        = template
         self.collection_path = collection_path
         self.metadata        = load_metadata(collection_path)
-        self.build_path      = collection_path / self.BUILD_PATH
+        self.build_path      = collection_path / build_path
         self.build_path.mkdir(parents=True, exist_ok=True)
 
     def get_chapter_output_path(self, chapter_index: int) -> Path:
@@ -33,13 +34,14 @@ class BuildManager:
     def build(self):
         """Builds everything!"""
         write_collection_readme(self)
-        write_main_template(self)
+        (self.build_path / OUTPUT_FILENAME) \
+            .write_text(format_main_template(self.template, self.metadata))
         process_poetry_files(self)
 
     def compile(self):
         """Compiles everything!"""
         with pushd(self.build_path):
-            system(f"pdflatex {MAIN_FNAME}")
-            system(f"pdflatex {MAIN_FNAME}")
-        pdf = (self.build_path / MAIN_FNAME).with_suffix(".pdf")
+            system(f"pdflatex {OUTPUT_FILENAME}")
+            system(f"pdflatex {OUTPUT_FILENAME}")
+        pdf = (self.build_path / OUTPUT_FILENAME).with_suffix(".pdf")
         pdf.replace(pdf.parents[1] / pdf.name)

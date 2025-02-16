@@ -97,6 +97,7 @@ class Chapter(yaml.YAMLObject, metaclass=Serializer):
 class Collection(yaml.YAMLObject, metaclass=Serializer):
     title: str
     chapters: List[Chapter]
+    header: Optional[str] = field(default=None)
     latex: Optional[LatexConfig] = field(default=None)
 
 

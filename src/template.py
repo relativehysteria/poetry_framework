@@ -1,43 +1,31 @@
 # Manages LaTeX template processing
+import importlib
+from os import listdir
 from pathlib import Path
 from metadata import Collection
 
 TEMPLATES_ROOT = Path(__file__).parent / "templates"
-MAIN_FNAME = "main.tex"
-MAIN_TEMPLATE = (TEMPLATES_ROOT / MAIN_FNAME).read_text()
+
+def format_main_template(template: str, metadata: Collection) -> str:
+    # Create a Template object using the selected template module
+    module   = importlib.import_module(f"templates.{template}")
+    template = module.Template(TEMPLATES_ROOT / f"{template}.tex", metadata)
+
+    # Generate the main latex file using this template
+    return template.generate_main_latex()
 
 
-def generate_main(metadata: Collection) -> str:
-    chapter_template = r"\placechap{{{title}}}{{{index}}}{{{epigraph}}}"
-    chapters_code = ""
+class Template:
+    def __init__(self, template_path: Path, metadata: Collection):
+        self.metadata = metadata
+        self.path     = template_path
+        self.text     = template_path.read_text()
 
-    # Generate \placechap chapter code
-    for index, chapter in enumerate(metadata.chapters, start=1):
-        title    = chapter.title.strip()
-
-        epigraph = chapter.epigraph
-        epigraph = "" if epigraph is None else epigraph
-        epigraph = epigraph.strip() \
-                .replace('\n\n', '\\\\ \n') \
-                .replace('\n', '\\\\\n')
-
-        chapters_code += "\n"
-        chapters_code += chapter_template.format(
-            title=title,
-            epigraph=epigraph,
-            index=index
-        )
-        chapters_code += "\n"
-
-    # Combine everything into the final LaTeX file content and return it
-    return MAIN_TEMPLATE.format(
-        packages=metadata.latex.generate_imports(),
-        title=metadata.title,
-        chapters=chapters_code
-    )
+    def generate_main_latex(self) -> str:
+        raise NotImplementedError
 
 
-def write_main_template(build_manager):
-    """Generate the main LaTeX file for the poetry collection."""
-    metadata = build_manager.metadata
-    (build_manager.build_path / MAIN_FNAME).write_text(generate_main(metadata))
+def get_templates():
+    """Returns a list of .tex template files."""
+    return [name[:-len(".tex")] for name in listdir(TEMPLATES_ROOT)
+            if name.endswith(".tex")]
