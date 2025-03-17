@@ -15,11 +15,14 @@ def needs_regeneration(input_file: Path, output_file: Path) -> bool:
 def regenerate_poem(input_file: Path) -> str:
     """Regenerate a LaTeX file for a poem."""
     splits = input_file.read_text().rstrip().split("\n\n")
-    title = splits[0] if splits[0] else "(Untitled)"
+    title = (splits[0] if splits[0] else "(Untitled)").replace("&", "\\&")
     stanzas = [i.split("\n") for i in splits[1:]]
 
-    # # Correct the quotes
+    # Correct the quotes
     stanzas = correct_quotes(stanzas)
+
+    # Correct special characters if any
+    stanzas = correct_specials(stanzas)
 
     # \testsc the first word of the poem.
     stanzas[0][0] = textsc_first(stanzas[0][0])
@@ -40,6 +43,15 @@ def regenerate_poem(input_file: Path) -> str:
     poem = re.sub(r'^ ', '~', poem, flags=re.MULTILINE)
 
     return poem
+
+
+def correct_specials(stanzas: List[List[str]]) -> List[List[str]]:
+    """Escapes special characters"""
+    for stanza in stanzas:
+        for (idx, line) in enumerate(stanza):
+            stanza[idx] = line.replace("&", "\\&")
+
+    return stanzas
 
 
 def correct_quotes(stanzas: List[List[str]]) -> List[List[str]]:
