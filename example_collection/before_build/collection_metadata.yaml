@@ -3,7 +3,10 @@
 # All taken from Poetry Foundation (without permission :P)
 title: "Mary Oliver: Selected Poems"
 latex: !LatexConfig
-  geometry: "a5paper,vmargin={2cm,8cm}"
+  compiler: "xelatex"
+  imports:
+    geometry: "a5paper,vmargin={2cm,8cm}"
+    tikz: null
 chapters:
   - !Chapter
     title: "We Happy Few"

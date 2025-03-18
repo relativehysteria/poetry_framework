@@ -40,8 +40,9 @@ class BuildManager:
 
     def compile(self):
         """Compiles everything!"""
+        compiler = self.metadata.latex.compiler
         with pushd(self.build_path):
-            system(f"xelatex {OUTPUT_FILENAME}")
-            system(f"xelatex {OUTPUT_FILENAME}")
+            system(f"{compiler} {OUTPUT_FILENAME}")
+            system(f"{compiler} {OUTPUT_FILENAME}")
         pdf = (self.build_path / OUTPUT_FILENAME).with_suffix(".pdf")
         pdf.replace(pdf.parents[1] / pdf.name)
