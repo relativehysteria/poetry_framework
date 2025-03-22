@@ -15,14 +15,13 @@ def needs_regeneration(input_file: Path, output_file: Path) -> bool:
 def regenerate_poem(input_file: Path) -> str:
     """Regenerate a LaTeX file for a poem."""
     splits = input_file.read_text().rstrip().split("\n\n")
-    title = (splits[0] if splits[0] else "(Untitled)").replace("&", "\\&")
+    title = splits[0] if splits[0] else "(Untitled)"
     stanzas = [i.split("\n") for i in splits[1:]]
 
-    # Correct the quotes
-    stanzas = correct_quotes(stanzas)
 
-    # Correct special characters if any
-    stanzas = correct_specials(stanzas)
+    # Correct the quotes and special characters
+    title = correct_specials(correct_quotes([[title]]))[0][0]
+    stanzas = correct_specials(correct_quotes(stanzas))
 
     # \testsc the first word of the poem.
     stanzas[0][0] = textsc_first(stanzas[0][0])
