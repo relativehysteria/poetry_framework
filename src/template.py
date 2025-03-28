@@ -12,6 +12,7 @@ def format_main_template(template: str, metadata: Collection) -> str:
     template = module.Template(TEMPLATES_ROOT / f"{template}.tex", metadata)
 
     # Generate the main latex file using this template
+    template.inject_preamble()
     return template.generate_main_latex()
 
 
@@ -23,6 +24,13 @@ class Template:
 
     def generate_main_latex(self) -> str:
         raise NotImplementedError
+
+    def inject_preamble(self):
+        begin_doc = r"\begin{{document}}"
+        preamble = self.metadata.latex.preamble
+        preamble = preamble.replace("{", "{{").replace("}", "}}")
+
+        self.text = self.text.replace(begin_doc, f"{preamble}\n{begin_doc}")
 
 
 def get_templates():

@@ -27,6 +27,7 @@ type LatexPackage = dict[str, Optional[str]]
 class LatexConfig(yaml.YAMLObject, metaclass=Serializer):
     compiler: Optional[str] = field(default="pdflatex")
     imports: Optional[LatexPackage] = field(default_factory=dict)
+    preamble: Optional[str] = field(default="")
 
     def validate(self):
         """Validates the imported packages"""
