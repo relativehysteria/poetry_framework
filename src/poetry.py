@@ -48,7 +48,10 @@ def correct_specials(stanzas: List[List[str]]) -> List[List[str]]:
     """Escapes special characters"""
     for stanza in stanzas:
         for (idx, line) in enumerate(stanza):
-            stanza[idx] = line.replace("&", "\\&")
+            chars = ("&", "$", "#")
+            for char in chars:
+                line = line.replace(char, f"\\{char}")
+            stanza[idx] = line
 
     return stanzas
 
